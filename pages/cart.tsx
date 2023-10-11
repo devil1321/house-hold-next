@@ -1,10 +1,11 @@
+import { GlobalComponents } from '@/components/global'
 import React from 'react'
 
 const Cart = () => {
   return (
-    <div>
+    <GlobalComponents.Layout className='cart' title='Cart' meta={[]}>
       cart
-    </div>
+    </GlobalComponents.Layout>
   )
 }
 

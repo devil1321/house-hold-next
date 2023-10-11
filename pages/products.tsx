@@ -1,10 +1,11 @@
+import { GlobalComponents } from '@/components/global'
 import React from 'react'
 
 const Products = () => {
   return (
-    <div>
+    <GlobalComponents.Layout className='products' title="Products" meta={[]}>
       products
-    </div>
+    </GlobalComponents.Layout>
   )
 }
 

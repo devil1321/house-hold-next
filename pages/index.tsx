@@ -1,10 +1,11 @@
+import { GlobalComponents } from '@/components/global'
 import React from 'react'
 
 const Index = () => {
   return (
-    <div>
+    <GlobalComponents.Layout className='home' title="Home" meta={[]}>
       next js
-    </div>
+    </GlobalComponents.Layout>
   )
 }
 

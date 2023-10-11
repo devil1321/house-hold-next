@@ -11,7 +11,7 @@ interface LayoutProps{
 
 const Layout:React.FC<LayoutProps> = ({className,title,meta,children}) => {
   return (
-    <div className={className}>
+    <div className={'container ' + className}>
       <Nav /> 
       <main>
         {children}
