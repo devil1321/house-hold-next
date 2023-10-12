@@ -1,10 +1,12 @@
 @import 'https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Pacifico&family=Roboto:wght@100;300;900&display=swap';
+*{
+    margin: 0px;
+    padding: 0px;
+}
 a{
     color:black;
     text-decoration: none;
 }
-
-
 .container{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

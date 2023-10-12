@@ -9,7 +9,6 @@ interface ProductProps{
 const Product:React.FC<ProductProps> = ({name,rating,price}) => {
   return (
     <div>
-      
     </div>
   )
 }

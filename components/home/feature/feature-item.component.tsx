@@ -9,7 +9,7 @@ interface FeatureItemProps{
 const FeatureItem:React.FC<FeatureItemProps> = ({name,rating,price}) => {
   return (
     <div>
-      
+      <h3>Item {name}</h3>
     </div>
   )
 }

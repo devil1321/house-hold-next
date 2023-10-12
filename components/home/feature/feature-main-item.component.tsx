@@ -8,7 +8,7 @@ interface FeatureMainItemProps{
 const FeatureMainItem:React.FC<FeatureMainItemProps> = ({heading,text}) => {
   return (
     <div>
-      
+      <h3>Main item {heading}</h3>
     </div>
   )
 }

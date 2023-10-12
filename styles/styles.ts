@@ -27,6 +27,58 @@ export const styles = {
           align-items:${ai};
           flex-wrap:${wrap};
         `
+      },
+      breakpoint_down:function(breakpoint:string,styles:string){
+        switch(breakpoint){
+          case "small":
+            return `@media(max-device-width: 39.0375em) {
+              ${styles}
+            }`
+          case "sm-med":
+            return `@media(max-device-width: 33.75em) {
+              ${styles}
+            }`
+          case "medium-sm":
+            return `@media(max-device-width: 63em) {
+              ${styles}
+            }`
+          case "medium":
+            return `@media(max-device-width: 64em) {
+              ${styles}
+            }`
+          case "large":
+            return `@media(max-device-width: 85.375em) {
+              ${styles}
+            }`
+          default:
+            return null
+        }
+      },
+      breakpoint_up:function(breakpoint:string,styles:string){
+        switch(breakpoint){
+          case "small":
+            return `@media(min-device-width: 39.0375em) {
+              ${styles}
+            }`
+          case "sm-med":
+            return `@media(min-device-width: 33.75em) {
+              ${styles}
+            }`
+          case "medium-sm":
+            return `@media(min-device-width: 63em) {
+              ${styles}
+            }`
+          case "medium":
+            return `@media(min-device-width: 64em) {
+              ${styles}
+            }`
+          case "large":
+            return `@media(min-device-width: 85.375em) {
+              ${styles}
+            }`
+          default:
+            return null
+        }
       }
     },
     fn:{
