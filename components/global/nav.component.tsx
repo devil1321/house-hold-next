@@ -81,7 +81,7 @@ const NavStyle = styled.div`
     position:relative;
     top:0px;
     left:0px;
-    width:80%;
+    width:85%;
     padding:5px 0px;
     margin:0px auto;
     border-top:1px solid black;
@@ -94,7 +94,7 @@ const NavStyle = styled.div`
        border:0px;
     `)}
     a{
-      margin:0px 10px;
+      margin:0px 30px;
       &:hover{
         color:${styles.colors.smalt_blue};
       }

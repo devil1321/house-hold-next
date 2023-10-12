@@ -18,6 +18,46 @@ export const styles = {
       smalt_blue:"#4C8787",
       black_rock:"#0A032A"
     },
+    components:{
+      button:`button{
+        cursor:pointer;
+        padding:10px 20px;
+        height:40px;
+        font-weight:bold;
+        background-color:#4C8787;
+        color:white;
+        border:0px;
+        &:hover{
+          opacity:0.7;
+        }
+      }`,
+      button_with_border:`button{
+        cursor:pointer;
+        padding:10px 20px;
+        height:40px;
+        font-weight:bold;
+        background-color:#4C8787;
+        border:2px solid white;
+        color:white;
+        box-shadow:0px 2px 2px grey;
+        &:hover{
+          opacity:0.7;
+        }
+      }`,
+      button_transparent:`button{
+        cursor:pointer;
+        padding:10px 20px;
+        height:40px;
+        font-weight:bold;
+        background:transparent;
+        border:2px solid white;
+        color:white;
+        box-shadow:0px 2px 2px grey;
+        &:hover{
+          opacity:0.7;
+        }
+      }`
+    },
     mixins:{
       flex:function(direction:string,jc:string,ai:string,wrap:string | null = null){
         return `

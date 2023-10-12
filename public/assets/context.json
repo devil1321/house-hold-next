@@ -159,5 +159,61 @@
         "rating":0,
         "price":8,
         "colors":["brown","yellow","grey"]
+    },
+    {
+        "id":24,
+        "name":"DECOR",
+        "rating":0,
+        "price":8,
+        "colors":["brown","yellow","grey"]
+    },
+    {
+        "id":25,
+        "name":"Linen Beach Towel",
+        "rating":4.5,
+        "price":30,
+        "colors":["brown","yellow","grey"]
+    },
+    {
+        "id":26,
+        "name":"Square Clear Glass Box",
+        "rating":4,
+        "price":30,
+        "colors":["brown","yellow","grey"]
+    },
+    {
+        "id":28,
+        "name":"4-pack Small Ceramic Plates",
+        "rating":4,
+        "price":30,
+        "colors":["brown","yellow","grey"]
+    },
+    {
+        "id":29,
+        "name":"Large Clear Glass Box",
+        "rating":4,
+        "price":30,
+        "colors":["brown","yellow","grey"]
+    },
+    {
+        "id":30,
+        "name":"Round Jute Placemat",
+        "rating":4,
+        "price":30,
+        "colors":["brown","yellow","grey"]
+    },
+    {
+        "id":31,
+        "name":"Metal Wire Basket",
+        "rating":4,
+        "price":30,
+        "colors":["brown","yellow","grey"]
+    },
+    {
+        "id":32,
+        "name":"BOHO CHIC",
+        "rating":4,
+        "price":30,
+        "colors":["brown","yellow","grey"]
     }
 ]

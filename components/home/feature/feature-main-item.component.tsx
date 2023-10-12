@@ -1,17 +1,71 @@
 import React from 'react'
+import styled from 'styled-components';
+import { styles } from '@/styles/styles';
 
 interface FeatureMainItemProps{
+    index:number;
+    imgSrc:string;
     heading:string;
     text:string;
 }
 
-const FeatureMainItem:React.FC<FeatureMainItemProps> = ({heading,text}) => {
+const FeatureMainItem:React.FC<FeatureMainItemProps> = ({index,imgSrc,heading,text}) => {
   return (
-    <div>
-      <h3>Main item {heading}</h3>
-    </div>
+    <FeatureMainItemStyle>
+      <div className='home__feature-main-item'>
+        <div className="home__feature-main-item-img">
+          <img src={imgSrc} alt="image" />
+        </div>
+        <div className="home__feature-main-item-overlay">
+          <h3>{heading}</h3>
+          <p>{text}</p>
+          <button>VIEW ALL</button>
+        </div>
+      </div>
+    </FeatureMainItemStyle>
   )
 }
 
+const FeatureMainItemStyle = styled.div`
+  .home__feature-main-item{
+    width:306px;
+    height:566px;
+    cursor:pointer;
+    position:relative;
+    top:0px;
+    left:0px;
+    &:hover{
+      .home__feature-main-item-overlay{
+        opacity:1;
+      }
+    }
+  }
+  .home__feature-main-item-overlay{
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:100%;
+    background-color:rgba(0,0,0,0.6);
+    transition:all 1s ease-in-out;
+    opacity:0;
+    box-sizing:border-box;
+    padding:0px 30px;
+    ${styles.mixins.flex('column','center','flex-start',null)}
+    h3{
+      font-size:${styles.fn.pxToRem(20)};
+      color:white;
+    }
+    p{
+      margin:30px 0px;
+      color:white;
+    }
+    &:first-of-type{
+      ${styles.components.button_with_border}
+    }
+    &:last-of-type{
+      ${styles.components.button_transparent}
+    }
+  }
+`
 
 export default FeatureMainItem
