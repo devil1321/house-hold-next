@@ -8,7 +8,7 @@ const Colors = () => {
     <ColorStyles>
         <h3>Colors</h3>
         <div className='products__colors'>
-            {styles.colors_array.map((c:string)=> <div style={{backgroundColor:c}} className='products__color'></div>)}
+            {styles.colors_array.map((c:string)=> <div key={c} style={{backgroundColor:c}} className='products__color'></div>)}
         </div>
     </ColorStyles>
   )
