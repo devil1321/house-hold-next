@@ -8,5 +8,7 @@ a{
     text-decoration: none;
 }
 .container{
+    margin:0px auto;
+    max-width: 1920px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

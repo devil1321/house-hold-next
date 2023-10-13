@@ -28,26 +28,25 @@ const FeatureMainItem:React.FC<FeatureMainItemProps> = ({index,imgSrc,heading,te
 
 const FeatureMainItemStyle = styled.div`
   .home__feature-main-item{
-    width:306px;
+    cursor:pointer;
+    margin:20px 5px;
+    width:calc(306px - 10px);
     height:566px;
     cursor:pointer;
     position:relative;
     top:0px;
     left:0px;
-    &:hover{
-      .home__feature-main-item-overlay{
-        opacity:1;
-      }
+    overflow:hidden;
+    img{
+      width:103%;
     }
   }
   .home__feature-main-item-overlay{
     position:absolute;
     top:0px;
     left:0px;
-    height:100%;
+    height:84%;
     background-color:rgba(0,0,0,0.6);
-    transition:all 1s ease-in-out;
-    opacity:0;
     box-sizing:border-box;
     padding:0px 30px;
     ${styles.mixins.flex('column','center','flex-start',null)}

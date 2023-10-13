@@ -1,6 +1,7 @@
 [
     {
         "id":1,
+        "img":"/assets/home/product-1.png",
         "name":"Tray with Foot",
         "rating":4,
         "price":30,
@@ -8,6 +9,7 @@
     },
     {
         "id":2,
+        "img":"/assets/home/product-2.png",
         "name":"Twill Seat Cushion",
         "rating":4,
         "price":30,
@@ -15,6 +17,7 @@
     },
     {
         "id":3,
+        "img":"/assets/home/product-3.png",
         "name":"Fluted Beverage Glass",
         "rating":4,
         "price":30,
@@ -22,6 +25,7 @@
     },
     {
         "id":4,
+        "img":"/assets/home/product-4.png",
         "name":"Ceramic Egg Cup",
         "rating":4,
         "price":30,
@@ -29,6 +33,7 @@
     },
     {
         "id":5,
+        "img":"/assets/home/product-5.png",
         "name":"Small Bamboo Box",
         "rating":4,
         "price":30,
@@ -36,6 +41,7 @@
     },
     {
         "id":6,
+        "img":"/assets/home/product-6.png",
         "name":"Metal Cutlery Basket",
         "rating":4,
         "price":30,
@@ -43,6 +49,7 @@
     },
     {
         "id":7,
+        "img":"/assets/products/product-7.png",
         "name":"4-pack Ceramic Cups",
         "rating":4,
         "price":30,
@@ -50,6 +57,7 @@
     },
     {
         "id":8,
+        "img":"/assets/home/product-8.png",
         "name":"2-pack Linen Napkins",
         "rating":4,
         "price":30,
@@ -57,6 +65,7 @@
     },
     {
         "id":9,
+        "img":"/assets/home/product-9.png",
         "name":"Glazed Stoneware Plate",
         "rating":4,
         "price":30,
@@ -64,6 +73,7 @@
     },
     {
         "id":10,
+        "img":"/assets/products/product-1.png",
         "name":"Velvet Covvered",
         "rating":0,
         "price":39,
@@ -71,6 +81,7 @@
     },
     {
         "id":11,
+        "img":"/assets/products/product-2.png",
         "name":"Candle Glass In Holder",
         "rating":0,
         "price":14        ,
@@ -78,6 +89,7 @@
     },
     {
         "id":12,
+        "img":"/assets/products/product-3.png",
         "name":"Metal Photo Frame",
         "rating":0,
         "price":25,
@@ -85,6 +97,7 @@
     },
     {
         "id":13,
+        "img":"/assets/products/product-4.png",
         "name":"Round Floor Mat",
         "rating":0,
         "price":34,
@@ -92,6 +105,7 @@
     },
     {
         "id":14,
+        "img":"/assets/products/product-5.png",
         "name":"Class Light Holder",
         "rating":0,
         "price":22,
@@ -99,6 +113,7 @@
     },
     {
         "id":15,
+        "img":"/assets/products/product-6.png",
         "name":"Flannel Duvet Cover Set",
         "rating":0,
         "price":44,
@@ -106,6 +121,7 @@
     },
     {
         "id":16,
+        "img":"/assets/products/product-7.png",
         "name":"Fitted Cotton Sheet",
         "rating":0,
         "price":24,
@@ -113,13 +129,15 @@
     },
     {
         "id":17,
-        "name":"",
+        "img":"/assets/products/product-8.png",
+        "name":"Ribbed Wool-blend Throw",
         "rating":0,
-        "price":0,
-        "colors":["brown","yellow","grey"]
+        "price":24,
+        "colors":["yellow","grey"]
     },
     {
         "id":18,
+        "img":"/assets/products/product-9.png",
         "name":"Small Candle In Small Jar",
         "rating":0,
         "price":14,
@@ -127,90 +145,95 @@
     },
     {
         "id":19,
-        "name":"",
-        "rating":0,
-        "price":0,
-        "colors":["brown","yellow","grey"]
-    },
-    {
-        "id":20,
+        "img":"/assets/products/product-10.png",
         "name":"Checked Duvet Cover",
         "rating":0,
         "price":24,
         "colors":["yellow","grey"]
     },
     {
-        "id":21,
+        "id":20,
+        "img":"/assets/products/product-11.png",
         "name":"Washed Linen Pillowcase",
         "rating":0,
         "price":18,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":22,
+        "id":21,
+        "img":"/assets/products/product-12.png",
         "name":"Ribbed Wool-blend Throw",
         "rating":0,
         "price":24,
         "colors":["yellow","grey"]
     },
     {
-        "id":23,
+        "id":22,
+        "img":"/assets/products/product-12.png",
         "name":"Mini Porcelain Dish",
         "rating":0,
         "price":8,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":24,
+        "id":23,
+        "img":"/assets/home/product-1.png",
         "name":"DECOR",
         "rating":0,
         "price":8,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":25,
+        "id":24,
+        "img":"/assets/home/decoration-1.png",
         "name":"Linen Beach Towel",
         "rating":4.5,
         "price":30,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":26,
+        "id":25,
+        "img":"/assets/home/decoration-2.png",
         "name":"Square Clear Glass Box",
         "rating":4,
         "price":30,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":28,
+        "id":26,
+        "img":"/assets/home/decoration-3.png",
         "name":"4-pack Small Ceramic Plates",
         "rating":4,
         "price":30,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":29,
+        "id":27,
+        "img":"/assets/home/decoration-4.png",
         "name":"Large Clear Glass Box",
         "rating":4,
         "price":30,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":30,
+        "id":28,
+        "img":"/assets/home/decoration-5.png",
         "name":"Round Jute Placemat",
         "rating":4,
         "price":30,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":31,
+        "id":29,
+        "img":"/assets/home/decoration-6.png",
         "name":"Metal Wire Basket",
         "rating":4,
         "price":30,
         "colors":["brown","yellow","grey"]
     },
     {
-        "id":32,
+        "id":30,
+        "img":"/assets/home/decoration-main-end.png",
         "name":"BOHO CHIC",
         "rating":4,
         "price":30,

@@ -28,17 +28,22 @@ const FeatureItem:React.FC<FeatureItemProps> = ({imgSrc,name,rating,price}) => {
 
 const FeatureItemStyle = styled.div`
   .home__feature-item{
-    width:306px;
+    cursor:pointer;
+    margin:20px 5px;
+    width:calc(306px - 10px);
     height:566px;
+    overflow:hidden;
   }
   .home__feature-item-img{
+    height:84%;
     img{
-      width:100%;
+      height:100%;
     }
   }
   .home__feature-item-details{
     h3{
-      font-size:${styles.fn.pxToRem(20)};
+      margin:10px 0px;
+      font-size:${styles.fn.pxToRem(16)};
     }
     p{
       margin:10px 0px;
