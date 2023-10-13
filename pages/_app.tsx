@@ -35,6 +35,8 @@ function Redux({ Component, pageProps }: AppProps) {
     <div className='main-container'>
       <Component {...pageProps} redux={{
         products:shop.products,
+        cart:shop.cart,
+        summary:shop.summary,
         shopActions
       }} />
     </div>
