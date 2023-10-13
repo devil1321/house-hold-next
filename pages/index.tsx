@@ -5,7 +5,6 @@ import { styles } from '@/styles/styles'
 import styled from 'styled-components'
 
 const Index:React.FC<{redux:any}> = ({redux}) => {
-  console.log(redux)
   return (
     <HomeStyle>
       <GlobalComponents.Layout className='home' title="Home" meta={[]}>

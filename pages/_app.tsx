@@ -8,40 +8,37 @@ import { Provider } from 'react-redux';
 import { ShopTypes } from '@/controller/types';
 import { bindActionCreators } from 'redux';
 import * as ShopActions from '../controller/action-creators/shop.action-creators'
+import { useInitialState } from '@/hooks/useInitialState';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
   const dispatch = store.dispatch
   const shopActions = bindActionCreators(ShopActions,dispatch)
-  const [isLoad,setIsLoad] = useState<boolean>(false)
-  const [products,setProducts] = useState<any>([])
+
+  const [products,setProducts] = useState<any[]>([])
+  const [reduxState,setReduxState] = useState<any[]>([])
+  const { appData } = useInitialState()
 
   const handleSetStoreProducts = () =>{
-    dispatch({
-      type:ShopTypes.HANDLE_SET_PRODUCTS,
-      products:products
-    })
-  }
-
-  const handleInitialState = async () => {
-    if(!isLoad){
-      const res = await axios.get('http://localhost:3000/assets/context.json')
-      setProducts([...res.data])
-      setIsLoad(true)
+    if(products?.length > 0){
+      dispatch({
+        type:ShopTypes.HANDLE_SET_PRODUCTS,
+        products:products
+      })
     }
+    setProducts(appData)
   }
- 
 
   useEffect(()=>{
-    handleInitialState()
     handleSetStoreProducts()
-  },[isLoad])
+    setReduxState(store.getState().shop.products)
+  },[products,appData])
   
   return (
     <div className='main-container'>
       <Provider store={store}>
         <Component {...pageProps} redux={{
-          products,
+          products:reduxState,
           shopActions
         }} />
       </Provider>
