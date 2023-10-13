@@ -17,24 +17,24 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [products,setProducts] = useState<any>([])
 
   const handleSetStoreProducts = () =>{
-    if(!isLoad){
-      dispatch({
-        type:ShopTypes.HANDLE_SET_PRODUCTS,
-        products:pageProps.response
-      })
-      setIsLoad(true)
-    }
+    dispatch({
+      type:ShopTypes.HANDLE_SET_PRODUCTS,
+      products:products
+    })
   }
 
   const handleInitialState = async () => {
-    const res = await axios.get('http://localhost:3000/assets/context.json')
-    setProducts([...res.data])
+    if(!isLoad){
+      const res = await axios.get('http://localhost:3000/assets/context.json')
+      setProducts([...res.data])
+      setIsLoad(true)
+    }
   }
  
 
   useEffect(()=>{
-    handleSetStoreProducts()
     handleInitialState()
+    handleSetStoreProducts()
   },[isLoad])
   
   return (
