@@ -18,6 +18,7 @@ export const styles = {
       smalt_blue:"#4C8787",
       black_rock:"#0A032A"
     },
+    colors_array:['#FFFFFF','#323334','#C4C4C4','#F2C94C','#F2994A','#EB5757','#BB6BD9','#56CCF2','#6FCF97','#219653','#2F80ED','#DF1313','#770505','#0A5D8B','#AD5B12','#4F0E8B','#0A7090','#156008'],
     components:{
       button:`button{
         cursor:pointer;
