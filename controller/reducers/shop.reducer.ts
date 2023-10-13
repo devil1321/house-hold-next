@@ -13,7 +13,7 @@ export default (state = initData,action:Action) =>{
         case ShopTypes.HANDLE_SET_PRODUCTS:
             return {
                 ...state,
-                products:action.products
+                products:action.products,
             }
         case ShopTypes.HANDLE_ADD_TO_CART:
             return {
