@@ -29,7 +29,7 @@ console.log(redux)
           </div>
           <DetailsComponents.Details product={product}  />
         </div>
-        <DetailsComponents.Carousel products={redux.products} />
+        <DetailsComponents.Carousel title="Also You May Like" products={redux.products} />
       </GlobalComponents.Layout>
     </DetailsStyle>
   )
@@ -38,7 +38,7 @@ console.log(redux)
 const DetailsStyle = styled.div`
   .details{
     main{
-      padding:30px 0px;
+      padding:30px 50px;
     }
   }
   .details__hero{

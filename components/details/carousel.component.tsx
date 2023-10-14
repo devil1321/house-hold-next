@@ -3,12 +3,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface CarouselProps{
+  title:string;
   products:any[]
 }
 
-const Carousel:React.FC<CarouselProps> = ({products}) => {
+const Carousel:React.FC<CarouselProps> = ({title,products}) => {
   return (
     <CarouselStyle>
+      <h3>{title}</h3>
       <div className='details__carousel'>
         <img src="/assets/icons/chevron-left.png" alt="left-chevron" />
         <div className="details__carousel-view-wrapper">
@@ -24,7 +26,7 @@ const Carousel:React.FC<CarouselProps> = ({products}) => {
                   </div>
                   <h3>{p.name}</h3>
                   <div className="details__carousel-product-colors">
-                    {p.colors.map((c)=><div className='details__carousel-product-color' style={{backgroundColor:c}}></div>)}
+                    {p.colors.map((c:any)=><div key={c} className='details__carousel-product-color' style={{backgroundColor:c}}></div>)}
                   </div>
                   <h3>{p.price}$</h3>
                 </div>
@@ -39,6 +41,9 @@ const Carousel:React.FC<CarouselProps> = ({products}) => {
 }
 
 const CarouselStyle = styled.div`
+  h3:first-of-type{
+    margin-top:30px;
+  }
   .details__carousel{
     margin:30px 0px;
     ${styles.mixins.flex('row','center','center',null)};
