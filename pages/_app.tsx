@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
 import '../styles/global.css'
+
 
 import store from '../controller/store'
 import { Provider } from 'react-redux';
@@ -24,8 +26,9 @@ function Redux({ Component, pageProps }: AppProps) {
 
   const dispatch = useDispatch()
   const shopActions = bindActionCreators(ShopActions,dispatch)
-  const { shop } = useSelector((state:State) => state)
+  const  { products ,cart, summary }  = useSelector((state:State) => state.shop)
   const { appData } = useInitialState()
+  const router = useRouter()
 
   useEffect(()=>{
     shopActions.setProducts(appData)
@@ -33,12 +36,17 @@ function Redux({ Component, pageProps }: AppProps) {
   
   return (
     <div className='main-container'>
-      <Component {...pageProps} redux={{
-        products:shop.products,
-        cart:shop.cart,
-        summary:shop.summary,
+      {/details/gi.test(router.pathname) 
+      ? <Component {...pageProps} redux={{
+          products,
+          shopActions
+        }}  />
+      : <Component {...pageProps} redux={{
+        products:products,
+        cart:cart,
+        summary:summary,
         shopActions
-      }} />
+    }} />}
     </div>
   )
 }

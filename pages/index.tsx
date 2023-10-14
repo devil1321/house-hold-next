@@ -3,10 +3,12 @@ import { HomeComponents } from '@/components/home'
 import React, { useEffect } from 'react'
 import { styles } from '@/styles/styles'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const Index:React.FC<{redux:any}> = ({redux}) => {
   return (
     <HomeStyle>
+      <Link href="/details/[id]" as="/details/1">Details</Link>
       <GlobalComponents.Layout className='home' title="Home" meta={[]}>
         <GlobalComponents.Search products={redux.products}/>
         <div className="home__hero">
