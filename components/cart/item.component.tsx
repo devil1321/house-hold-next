@@ -74,7 +74,6 @@ const Item:React.FC<ItemProps> = ({redux,product}) => {
 
 const ItemStyle = styled.div`
   .cart__item{
-    margin:20px 0px;
     position:relative;
     top:0px;
     left:0px;
@@ -108,6 +107,14 @@ const ItemStyle = styled.div`
       }
     }
   }
+  .cart__item-img{
+    overflow:hidden;
+    width:200px;
+    height:300px;
+    img{
+      width:100%;
+    }
+  } 
   .cart__item-details{
     margin-left:20px;
   }
