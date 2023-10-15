@@ -34,12 +34,13 @@ const CartStyle = styled.div`
     text-align:center;
   }
   .cart__main-details{
-    ${styles.mixins.flex('row','space-between','center',null)};
+    ${styles.mixins.flex('row','space-between','flex-start',null)};
   }
   .cart__items{
     width:60%;
   }
   .cart__summary-wrapper{
+    padding:0px 30px;
     width:40%;
   }
 `

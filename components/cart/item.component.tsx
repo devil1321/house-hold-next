@@ -74,6 +74,7 @@ const Item:React.FC<ItemProps> = ({redux,product}) => {
 
 const ItemStyle = styled.div`
   .cart__item{
+    margin:20px 0px;
     position:relative;
     top:0px;
     left:0px;
@@ -88,6 +89,7 @@ const ItemStyle = styled.div`
     }
   }
   .cart__item-cross{
+    cursor:pointer;
     position:absolute;
     right:0px;
     top:0px;

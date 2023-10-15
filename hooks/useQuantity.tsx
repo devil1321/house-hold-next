@@ -12,7 +12,7 @@ const useQuantity = (id:number) => {
 
   const handleQuantity = () =>{
     const item = products.find((i:any) => i.id === id)
-    shopActions.handleSummary(id,cart)
+    // shopActions.handleSummary(id,cart)
     if(item?.quantity < 1){
         setQuantity(0)
         shopActions.handleRemove(id,cart)
