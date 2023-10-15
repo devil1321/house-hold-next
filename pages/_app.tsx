@@ -36,17 +36,13 @@ function Redux({ Component, pageProps }: AppProps) {
   
   return (
     <div className='main-container'>
-      {/details/gi.test(router.pathname) 
-      ? <Component {...pageProps} redux={{
-          products,
-          shopActions
-        }}  />
-      : <Component {...pageProps} redux={{
+     <Component {...pageProps} redux={{
         products:products,
         cart:cart,
         summary:summary,
         shopActions
-    }} />}
+      }}
+    />
     </div>
   )
 }

@@ -6,7 +6,6 @@ interface SubSummaryProps{
 }
 
 const SubSummary:React.FC<SubSummaryProps> = ({summary}) => {
-  console.log(summary)
   return (
     <SubSummaryStyle>
       <div className='cart__sub-summary'>

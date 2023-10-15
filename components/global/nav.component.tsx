@@ -27,27 +27,29 @@ const Nav = () => {
           </div>
           <div className="nav__header-controls">
               <img src="/assets/icons/profile.png" alt="profile" />
-              <img src="/assets/icons/cart.png" alt="cart" />
+              <Link href="/cart">
+                <img src="/assets/icons/cart.png" alt="cart" />
+              </Link>
               <img src="/assets/icons/hamburger.png" alt="hamburger" onClick={()=>handleMenu()}/>
           </div>
         </div>
         <div className="nav__items">
-          <Link href="#">HOME</Link>
-          <Link href="#">STORE</Link>
-          <Link href="#">ACCESSORIES</Link>
-          <Link href="#">BRAND</Link>
-          <Link href="#">PAGES</Link>
-          <Link href="#">ABOUT US</Link>
-          <Link href="#">NEWS</Link>
-          <Link href="#">CONTACT US</Link>
+          <Link href="/">HOME</Link>
+          <Link href="/products">STORE</Link>
+          <Link href="/products">ACCESSORIES</Link>
+          <Link href="/products">BRAND</Link>
+          <Link href="/products">PAGES</Link>
+          <Link href="/products">ABOUT US</Link>
+          <Link href="/products">NEWS</Link>
+          <Link href="/products">CONTACT US</Link>
           <div className="nav__menu" ref={menuRef}>
-                <Link href="#" onClick={()=>handleMenu()}>Product Type</Link>
-                <Link href="#" onClick={()=>handleMenu()}>Favoruites</Link>
-                <Link href="#" onClick={()=>handleMenu()}>Size</Link>
-                <Link href="#" onClick={()=>handleMenu()}>Color</Link>
-                <Link href="#" onClick={()=>handleMenu()}>Concept</Link>
-                <Link href="#" onClick={()=>handleMenu()}>Collection</Link>
-                <Link href="#" onClick={()=>handleMenu()}>Quality</Link>
+                <Link href="/products" onClick={()=>handleMenu()}>Product Type</Link>
+                <Link href="/products" onClick={()=>handleMenu()}>Favoruites</Link>
+                <Link href="/products" onClick={()=>handleMenu()}>Size</Link>
+                <Link href="/products" onClick={()=>handleMenu()}>Color</Link>
+                <Link href="/products" onClick={()=>handleMenu()}>Concept</Link>
+                <Link href="/products" onClick={()=>handleMenu()}>Collection</Link>
+                <Link href="/products" onClick={()=>handleMenu()}>Quality</Link>
                 <div className="nav__menu-buttons">
                   <button onClick={()=>handleMenu()}>CLEAR ALL</button>
                   <button onClick={()=>handleMenu()}>DONE</button>
@@ -101,6 +103,7 @@ const NavStyle = styled.div`
     }
   }
   .nav__menu{
+    z-index:10;
     width:100%;
     position:absolute;
     top:50px;

@@ -9,7 +9,7 @@ interface FeatureMainItemProps{
     text:string;
 }
 
-const FeatureMainItem:React.FC<FeatureMainItemProps> = ({index,imgSrc,heading,text}) => {
+const FeatureMainItem:React.FC<FeatureMainItemProps> = ({imgSrc,heading,text}) => {
   return (
     <FeatureMainItemStyle>
       <div className='home__feature-main-item'>

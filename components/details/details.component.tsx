@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 interface DetailsProps{
   product:any;
+  redux:any;
 }
 
-const Details:React.FC<DetailsProps> = ({product}) => {
+const Details:React.FC<DetailsProps> = ({redux,product}) => {
 
   const [isMenu,setIsMenu] = useState<boolean>(false)
 
@@ -34,7 +35,10 @@ const Details:React.FC<DetailsProps> = ({product}) => {
             <h3 onClick={()=>setIsMenu(false)}>MD</h3>
             <h3 onClick={()=>setIsMenu(false)}>LG</h3>
           </div>}
-          <button>ADD TO CART</button>
+          {!product?.inCart
+            ? <button onClick={()=>redux.shopActions.handleAddProduct(product.id,redux.cart,redux.products)}>ADD TO CART</button>
+            : <button>IN CART</button>
+          }
       </div>
     </DetailsStyle>
   )

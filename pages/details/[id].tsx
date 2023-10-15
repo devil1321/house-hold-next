@@ -27,7 +27,7 @@ console.log(redux)
             <DetailsComponents.View  product={product} />
             <DetailsComponents.Info product={product}  />
           </div>
-          <DetailsComponents.Details product={product}  />
+          <DetailsComponents.Details redux={redux} product={product}  />
         </div>
         <DetailsComponents.Carousel title="Also You May Like" products={redux.products} />
       </GlobalComponents.Layout>

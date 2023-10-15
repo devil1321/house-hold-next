@@ -10,15 +10,16 @@ interface ItemProps{
 
 const Item:React.FC<ItemProps> = ({redux,product}) => {
 
-  const [quantity,setQuantity] = useQuantity(product?.id)
   const [array,setArray] = useState<number[]>([])
   const [isMenu,setIsMenu] = useState<boolean>(false)
+  const [update,setUpdate] = useState<boolean>(false)
+  const [quantity,setQuantity] = useQuantity(product?.id,update)
   
 
   const handleArray = () =>{
     const numbersArray = [];
     if(array.length === 0){
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 0; i <= 10; i++) {
         numbersArray.push(i);
       }
       setArray(numbersArray)
@@ -32,7 +33,10 @@ const Item:React.FC<ItemProps> = ({redux,product}) => {
   return (
     <ItemStyle>
       <div className='cart__item'>
-        <div className='cart__item-cross' onClick={()=>{redux.shopActions.handleRemove(product?.id)}}>
+        <div className='cart__item-cross' onClick={()=>{
+            redux.shopActions.handleRemove(product?.id,redux.cart,redux.products)
+            redux.shopActions.handleSummary(redux.cart)
+          }}>
           <span></span>
           <span></span>
         </div>
@@ -61,8 +65,9 @@ const Item:React.FC<ItemProps> = ({redux,product}) => {
                 <div className="cart__item-quantity-menu">
                   {array.map((i:number) => 
                     <div key={i} data-value={i} onClick={()=>{
-                      redux.shopActions.handleCartQuantity(product?.id,redux.cart,i)
+                      redux.shopActions.handleCartQuantity(product?.id,redux.cart,redux.products,i)
                       setIsMenu(false)
+                      setUpdate(!update)
                     }}>{i}</div>)}
                 </div>}
           </div>

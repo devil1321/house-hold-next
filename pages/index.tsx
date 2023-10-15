@@ -8,7 +8,6 @@ import Link from 'next/link'
 const Index:React.FC<{redux:any}> = ({redux}) => {
   return (
     <HomeStyle>
-      <Link href="/details/[id]" as="/details/1">Details</Link>
       <GlobalComponents.Layout className='home' title="Home" meta={[]}>
         <GlobalComponents.Search products={redux.products}/>
         <div className="home__hero">
@@ -24,7 +23,7 @@ const Index:React.FC<{redux:any}> = ({redux}) => {
             if(i === 0 || i === 7){
               return <HomeComponents.FeatureMainItem key={p.id} index={i} imgSrc={p.img} heading={p.name} text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, velit?" />
             }else{
-              return <HomeComponents.FeatureItem key={p.id} imgSrc={p.img} name={p.name} rating={p.rating} price={p.price}/>
+              return <HomeComponents.FeatureItem key={p.id} redux={redux} id={p.id} inCart={p.inCart} imgSrc={p.img} name={p.name} rating={p.rating} price={p.price}/>
             }
           })}
         </div>
@@ -32,7 +31,7 @@ const Index:React.FC<{redux:any}> = ({redux}) => {
         <div className="home__products">
           <h2>Top Rating</h2>
           <div className="home__products-place">
-            {redux.products.slice(0,9).map((p:any) => <HomeComponents.Product key={p.id} imgSrc={p.img} name={p.name} rating={p.rating} price={p.price} />)}
+            {redux.products.slice(0,9).map((p:any) => <HomeComponents.Product key={p.id} redux={redux} id={p.id} inCart={p.inCart} imgSrc={p.img} name={p.name} rating={p.rating} price={p.price} />)}
             <button>Load More</button>
           </div>
         </div>

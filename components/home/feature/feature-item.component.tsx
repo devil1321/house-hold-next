@@ -1,26 +1,34 @@
 import { styles } from '@/styles/styles';
+import Link from 'next/link';
 import React from 'react'
 import styled from 'styled-components';
 
 interface FeatureItemProps{
+  redux:any;
+  id:number;
+  inCart:boolean;
   imgSrc:string;
   name:string;
   rating:number;
   price:number;
 }
 
-const FeatureItem:React.FC<FeatureItemProps> = ({imgSrc,name,rating,price}) => {
+const FeatureItem:React.FC<FeatureItemProps> = ({redux,id,inCart,imgSrc,name,rating,price}) => {
   return (
     <FeatureItemStyle>
       <div className='home__feature-item'>
         <div className="home__feature-item-img">
           <div className="home__feature-overlay">
-            <button>BUY</button>
+            {!inCart 
+              ? <button onClick={()=>redux.shopActions.handleAddProduct(id,redux.cart,redux.products)}>BUY</button>
+              : <button>IN CART</button>}
           </div>
           <img src={imgSrc} alt="item-img" />
         </div>
         <div className="home__feature-item-details">
-          <h3>{name}</h3>
+          <Link href="/details/[id]" as={`/details/${id}`}>
+            <h3>{name}</h3>
+          </Link>
           <p>{rating}</p>
           <h3>{price}$</h3>
         </div>
@@ -40,6 +48,9 @@ const FeatureItemStyle = styled.div`
       .home__feature-overlay{
         opacity:1;
       }
+    }
+    h3{
+      cursor:pointer;
     }
   }
   .home__feature-item-img{

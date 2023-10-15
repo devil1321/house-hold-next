@@ -1,26 +1,34 @@
 import React from 'react'
 import styled from 'styled-components';
 import { styles } from '@/styles/styles';
+import Link from 'next/link';
 
 interface ProductProps{
+    redux:any;
+    id:number;
     imgSrc:string;
     name:string;
     rating:number;
     price:string;
+    inCart:boolean;
 }
 
-const Product:React.FC<ProductProps> = ({imgSrc,name,rating,price}) => {
+const Product:React.FC<ProductProps> = ({redux,id,imgSrc,name,rating,price,inCart}) => {
   return (
     <ProductStyle>
       <div className="home__product">
-        <div className="home__product-image">
-          <div className="home__product-overlay">
-            <button>BUY</button>
+          <div className="home__product-image">
+            <div className="home__product-overlay">
+              {!inCart 
+                ? <button onClick={redux.shopActions.handleAddProduct(id,redux.cart,redux.products)}>BUY</button>
+                : <button>IN CART</button>}
+            </div>
+              <img src={imgSrc} alt="product-image" />
           </div>
-          <img src={imgSrc} alt="product-image" />
-        </div>
         <div className="home__product-details">
-          <h3>{name}</h3>
+          <Link href="/details/[id]" as={`/details/${id}`}>
+              <h3>{name}</h3>
+          </Link>
           <div>{rating}</div>
           <h3>{price}$</h3>
         </div>
@@ -40,6 +48,9 @@ const ProductStyle = styled.div`
       .home__product-overlay{
         opacity:1;
       }
+    }
+    h3{
+      cursor:pointer;
     }
   }
   .home__product-image{
@@ -66,7 +77,7 @@ const ProductStyle = styled.div`
     ${styles.mixins.flex('row','center','center',null)}
     ${styles.components.button_transparent}
     button{
-      width:100px;
+      min-width:100px;
     }
   }
   .home__product-details{

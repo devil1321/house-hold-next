@@ -21,7 +21,7 @@ const Products:React.FC<any> = ({redux}) => {
             <ProductsComponents.Heading heading='BEDROOM' text='TRANSFORM YOUR BEDROOM INTERIOR WITH OUR GREAT SELECTION OF ACCESSORIES'/>
             <ProductsComponents.Nav />
             <div className="products__products-place">
-              {redux.products.slice(9,21).map((p:any) => <ProductsComponents.Product key={p.id} id={p.id} imgSrc={p.img} name={p.name} colors={p.colors} price={p.price}/>)}
+              {redux.products.slice(9,21).map((p:any) => <ProductsComponents.Product key={p.id} redux={redux} inCart={p.inCart} id={p.id} imgSrc={p.img} name={p.name} colors={p.colors} price={p.price}/>)}
               <button>LOAD MORE</button>
             </div>
           </div>
