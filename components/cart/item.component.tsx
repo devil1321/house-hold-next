@@ -77,6 +77,7 @@ const ItemStyle = styled.div`
     position:relative;
     top:0px;
     left:0px;
+    margin-bottom:20px;
     ${styles.mixins.flex('row','flex-start','center',null)}
     h3,p{
       margin:10px 0px;
