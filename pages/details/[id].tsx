@@ -4,6 +4,7 @@ import axios from 'axios'
 import { DetailsComponents } from '@/components/details'
 import styled from 'styled-components'
 import { styles } from '@/styles/styles'
+import products from '@/public/assets/context.json'
 
 const Details:React.FC<any> = ({params,redux}) => {
 console.log(redux)
@@ -57,8 +58,7 @@ export default Details
 
 export async function getStaticPaths() {
   try {
-    const res = await axios.get('http://localhost:3000/assets/context.json');
-    const paths = res.data.map((p: any) => ({
+    const paths = products.map((p: any) => ({
       params: {
         id: p.id.toString(),
       },

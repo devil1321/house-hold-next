@@ -20,7 +20,7 @@ const Product:React.FC<ProductProps> = ({redux,id,imgSrc,name,rating,price,inCar
           <div className="home__product-image">
             <div className="home__product-overlay">
               {!inCart 
-                ? <button onClick={redux.shopActions.handleAddProduct(id,redux.cart,redux.products)}>BUY</button>
+                ? <button onClick={()=>redux.shopActions.handleAddProduct(id,redux.cart,redux.products)}>BUY</button>
                 : <button>IN CART</button>}
             </div>
               <img src={imgSrc} alt="product-image" />
