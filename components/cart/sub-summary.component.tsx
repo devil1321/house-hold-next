@@ -1,6 +1,10 @@
 import React from 'react'
 
-const SubSummary = () => {
+interface SubSummaryProps{
+  summary:number;
+}
+
+const SubSummary:React.FC<SubSummaryProps> = ({summary}) => {
   return (
     <div>
       

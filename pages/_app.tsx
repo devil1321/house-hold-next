@@ -31,7 +31,7 @@ function Redux({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(()=>{
-    shopActions.setProducts(appData)
+    shopActions.handleSetProducts(appData)
   },[appData])
   
   return (
