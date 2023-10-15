@@ -37,6 +37,9 @@ const Summary:React.FC<SummaryProps> = ({summary}) => {
 
 const SummaryStyle = styled.div`
   .cart__summary{
+    position:relative;
+    top:-20px;
+    left:0px;
     padding:20px;
     background-color:#ECEBE9;
     p{
