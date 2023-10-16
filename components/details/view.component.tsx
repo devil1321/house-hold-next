@@ -49,7 +49,7 @@ const ViewStyle = styled.div`
     height:550px;
     overflow:hidden;
     ${styles.mixins.breakpoint_down('small',`
-      height:240px;
+      height:200px;
     `)}
     img{
       width:100%;
