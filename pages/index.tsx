@@ -53,6 +53,10 @@ const HomeStyle = styled.div`
     padding:0px 50px;
     margin:50px 0px;
     ${styles.mixins.flex('row','space-between','flex-start','wrap')};
+    ${styles.mixins.breakpoint_down('small',`
+      padding:0px 10px;
+      ${styles.mixins.flex('row','center','flex-start','wrap')};
+    `)}
   }
   .home__products{
     padding:0px 50px;
