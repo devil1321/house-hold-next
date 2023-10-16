@@ -33,6 +33,9 @@ const SecondBannerStyle = styled.div`
     img{
       width:100%;
     }
+    ${styles.mixins.breakpoint_down('small',`
+      margin-bottom:200px;
+    `)}
   }
   .home__second-banner-details{
     opacity:0.7;
@@ -42,6 +45,10 @@ const SecondBannerStyle = styled.div`
     top:20%;
     left:10%;
     background-color:${styles.colors.goldenrod};
+    ${styles.mixins.breakpoint_down('small',`
+      width:100%;
+      left:0px;
+    `)}
     h2:first-of-type{
       color:#323334;
       margin:10px 0px;

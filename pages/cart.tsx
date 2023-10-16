@@ -37,6 +37,9 @@ const CartStyle = styled.div`
   .cart{
     main{
       padding:30px 50px;
+      ${styles.mixins.breakpoint_down('small',`
+        padding:30px 10px;
+      `)}
     }
     .cart__link{
       width:100%;
@@ -52,13 +55,22 @@ const CartStyle = styled.div`
   }
   .cart__main-details{
     ${styles.mixins.flex('row','space-between','flex-start',null)};
+    ${styles.mixins.breakpoint_down('small',`
+      ${styles.mixins.flex('row','space-between','flex-start','wrap')};
+    `)}
   }
   .cart__items{
     width:60%;
+    ${styles.mixins.breakpoint_down('small',`
+      width:100%;
+    `)}
   }
   .cart__summary-wrapper{
     padding:0px 30px;
     width:40%;
+    ${styles.mixins.breakpoint_down('small',`
+      width:100%;
+    `)}
   }
 `
 

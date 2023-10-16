@@ -29,6 +29,9 @@ const InnerItemStyle = styled.div`
     ${styles.mixins.flex('row','space-between','center',null)};
   }
   .home__inner-item-img{
+    ${styles.mixins.breakpoint_down('small',`
+      width:150px;
+    `)}
     img{
       width:100%;
     }
@@ -40,6 +43,7 @@ const InnerItemStyle = styled.div`
     }
     button{
       margin-top:20px;
+      min-width:fit-content;
     }
     ${styles.components.button_with_border}
   }

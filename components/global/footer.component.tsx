@@ -63,6 +63,9 @@ const FooterStyle = styled.div`
     padding:50px 70px 10px;
     color:white;
     background-color:${styles.colors.black_rock};
+    ${styles.mixins.breakpoint_down('small',`
+      padding:50px 10px 10px;
+    `)}
     h3{
       margin:5px 0px;
       font-size:${styles.fn.pxToRem(14)};
@@ -73,6 +76,9 @@ const FooterStyle = styled.div`
     }
     .footer__columns{
       ${styles.mixins.flex('row','space-between','flex-start',null)}
+      ${styles.mixins.breakpoint_down('small',`
+        ${styles.mixins.flex('row','space-between','flex-start','wrap')}
+      `)}
     }
     .footer__column{
       margin:0px 10px;
@@ -83,6 +89,9 @@ const FooterStyle = styled.div`
       &:last-of-type{
         width:30%;
       }
+      ${styles.mixins.breakpoint_down('small',`
+        width:100% !important;
+      `)} 
       a{
         display:block;
         min-width:fit-content;

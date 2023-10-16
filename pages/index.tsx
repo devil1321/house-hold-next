@@ -44,7 +44,10 @@ const Index:React.FC<{redux:any}> = ({redux}) => {
 const HomeStyle = styled.div`
   .home__items{
     padding:0px 50px;
-    ${styles.mixins.flex('row','space-between','flex-start',null)};
+    ${styles.mixins.flex('row','space-between','flex-start','wrap')};
+    ${styles.mixins.breakpoint_down('small',`
+      padding:0px 10px;
+    `)}
   }
   .home__feature{
     padding:0px 50px;
@@ -54,16 +57,25 @@ const HomeStyle = styled.div`
   .home__products{
     padding:0px 50px;
     margin:50px 0px;
+    ${styles.mixins.breakpoint_down('small',`
+      padding:0px 10px;
+    `)}
     button{
       width:10%;
       display:block;
       margin:0px auto;
+      ${styles.mixins.breakpoint_down('small',`
+        width:100%;
+      `)}
     }
     ${styles.components.button}
   }
   .home__products-place{
     div{
       width:33%;
+      ${styles.mixins.breakpoint_down('small',`
+        width:100%
+      `)}
     }
     ${styles.mixins.flex('row','space-between','center','wrap')}
   }

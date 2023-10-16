@@ -47,6 +47,9 @@ const Details:React.FC<DetailsProps> = ({redux,product}) => {
 const DetailsStyle = styled.div`
   .details__details{
     padding:0px 30px;
+    ${styles.mixins.breakpoint_down('small',`
+      padding:0px 10px;
+    `)}
     h3{
       margin:10px 0px;
     }

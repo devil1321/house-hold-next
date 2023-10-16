@@ -36,13 +36,23 @@ const SignUpStyle = styled.div`
     margin:50px 0px;
     padding:0px 50px;
     ${styles.mixins.flex('row','space-between','center',null)}
+    ${styles.mixins.breakpoint_down('small',`
+      padding:0px 10px;
+      ${styles.mixins.flex('row','space-between','center','wrap')}
+    `)}
   }
   .home__sign-up-form{
     width:40%;
+    ${styles.mixins.breakpoint_down('small',`
+      width:100%;
+    `)}
   }
   .home__sign-up-field{
     width:100%;
     ${styles.mixins.flex('row','center','center',null)}
+    ${styles.mixins.breakpoint_down('small',`
+      margin:10px 0px;
+    `)}
     input{
       padding:0px 5px;
       width:80%;

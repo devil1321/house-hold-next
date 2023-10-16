@@ -42,6 +42,7 @@ const SummaryStyle = styled.div`
     left:0px;
     padding:20px;
     background-color:#ECEBE9;
+    ${styles.mixins.breakpoint_down('small',`margin-top:30px`)}
     p{
       text-align:center;
     }

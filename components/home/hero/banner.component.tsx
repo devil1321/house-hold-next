@@ -36,6 +36,12 @@ const BannerStyle = styled.div`
   }
   .home__banner-text{
     width:50%;
+    ${styles.mixins.breakpoint_down('small',`
+      width:100%;
+      position:relative;
+      top:-150px;
+      left:18%;
+    `)}
     h3{
       color:#323334;
     }

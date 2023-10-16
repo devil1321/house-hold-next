@@ -29,6 +29,9 @@ const IconsStyle = styled.div`
     margin:30px auto;
     width:70%;
     ${styles.mixins.flex('row','space-between','center',null)}
+    ${styles.mixins.breakpoint_down('small',`
+      width:90%;
+    `)}
   }
   .home__icons-item{
     ${styles.mixins.flex('row','space-between','center',null)}

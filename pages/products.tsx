@@ -35,18 +35,31 @@ const ProductsStyle = styled.div`
   .products__main{
     padding:0px 40px;
     ${styles.mixins.flex('row','space-between','flex-start',null)};
+    ${styles.mixins.breakpoint_down('small',`
+      padding:0px 10px;
+      ${styles.mixins.flex('row','space-between','flex-start','wrap')};
+    `)}
     & > div:first-of-type{
       width:270px;
     }
   }
   .products__products-container{
     width:75%;
+    ${styles.mixins.breakpoint_down('small',`
+      width:100%;
+    `)}
   }
   .products__products-place{
     padding:0px 0px 30px;
     ${styles.mixins.flex('row','space-between','center','wrap')}
     & > div {
       width:30%;
+      ${styles.mixins.breakpoint_down('medium',`
+        width:50%;
+      `)}
+      ${styles.mixins.breakpoint_down('small',`
+        width:100%;
+      `)}
     }
     button{
       margin:0px auto;

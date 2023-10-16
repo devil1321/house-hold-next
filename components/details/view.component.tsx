@@ -40,11 +40,17 @@ const ViewStyle = styled.div`
   .details__view-images{
     min-width:165%;
     ${styles.mixins.flex('row','flex-start','center',null)}
+    ${styles.mixins.breakpoint_down('small',`
+      min-width:100%;
+    `)}
   }
   .details__view-sm-img{
     width:50%;
     height:550px;
     overflow:hidden;
+    ${styles.mixins.breakpoint_down('small',`
+      height:240px;
+    `)}
     img{
       width:100%;
     }
@@ -54,6 +60,10 @@ const ViewStyle = styled.div`
     min-width:165%;
     height:100%;
     overflow:hidden;
+    ${styles.mixins.breakpoint_down('small',`
+      margin-top:10px;
+      min-width:100%;
+    `)}
     img{
       width:100%;
     }

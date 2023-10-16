@@ -1,13 +1,15 @@
 import { styles } from '@/styles/styles'
+import Link from 'next/link';
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 interface CarouselProps{
+  redux:any;
   title:string;
   products:any[]
 }
 
-const Carousel:React.FC<CarouselProps> = ({title,products}) => {
+const Carousel:React.FC<CarouselProps> = ({redux,title,products}) => {
   const [move,setMove] = useState<number>()
   const [count,setCount] = useState<number>(1);
 
@@ -47,11 +49,15 @@ const Carousel:React.FC<CarouselProps> = ({title,products}) => {
                 <div ref={itemRef} key={p.id} className='details__carousel-product'>
                   <div className="details__carousel-product-img">
                     <div className="details__carousel-img-overlay">
-                      <button>BUY NOW</button>
+                      {!p.inCart
+                        ? <button onClick={()=>redux.shopActions.handleAddProduct(p.id,redux.cart,redux.products)}>BUY NOW</button>
+                        : <button>IN CART</button>}
                     </div>
                     <img src={p.img} alt="product-image" />
                   </div>
-                  <h3>{p.name}</h3>
+                  <Link href="/details/[id]" as={`/details/${p.id}`}>
+                    <h3>{p.name}</h3>
+                  </Link>
                   <div className="details__carousel-product-colors">
                     {p.colors.map((c:any)=><div key={c} className='details__carousel-product-color' style={{backgroundColor:c}}></div>)}
                   </div>
@@ -90,6 +96,7 @@ const CarouselStyle = styled.div`
   }
   .details__carousel-view-wrapper{
     width:90%;
+    margin:0px auto;
     overflow:hidden;
   }
   .details__carousel-view{
@@ -100,6 +107,10 @@ const CarouselStyle = styled.div`
     cursor:pointer;
     margin:0px 20px;
     min-width:calc(100% / 4 - 40px);
+    ${styles.mixins.breakpoint_down('small',`
+      min-width:100%;
+      transform:translateX(-20px);
+    `)}
     &:hover{
       .details__carousel-img-overlay{
         opacity:1;

@@ -22,8 +22,10 @@ const Nav = () => {
       <div className='nav'>
         <div className="nav__header">
           <div className="nav__logo">
+            <Link href="/">
               <img src="/assets/icons/logo.png" alt="logo" />
-              <h1>Brand Name</h1>
+            </Link>
+              <h1 className='nav__brand-name'>Brand Name</h1>
           </div>
           <div className="nav__header-controls">
               <img src="/assets/icons/profile.png" alt="profile" />
@@ -75,9 +77,21 @@ const NavStyle = styled.div`
       margin-left:10px;
     }
   }
+  .nav__brand-name{
+    ${styles.mixins.breakpoint_down('small',`
+      display:none;
+    `)}
+  }
   .nav__header-controls{
     ${styles.mixins.flex('row','space-between','center',null)}
     width:10%;
+    ${styles.mixins.breakpoint_down('small',`
+      width:30%;
+      margin-right:20px;
+      img{
+        margin:0px 5px;
+      }
+    `)}
   }
   .nav__items{
     position:relative;
@@ -116,7 +130,7 @@ const NavStyle = styled.div`
     ${styles.mixins.breakpoint_down('small',`
       top:0px;
       width:130%;
-      transform:translateX(-42%);
+      transform:translateX(-50%);
     `)}
     a{
       display:block;

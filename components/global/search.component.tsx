@@ -25,6 +25,9 @@ const SearchStyle = styled.div`
     width:40%;
     margin:20px auto;
     ${styles.mixins.flex('row','center','center',null)}
+    ${styles.mixins.breakpoint_down('small',`
+      width:90%;
+    `)}
   }
   .search__field{
     border-radius:25px;

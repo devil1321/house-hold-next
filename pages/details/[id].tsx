@@ -30,7 +30,7 @@ console.log(redux)
           </div>
           <DetailsComponents.Details redux={redux} product={product}  />
         </div>
-        <DetailsComponents.Carousel title="Also You May Like" products={redux.products} />
+        <DetailsComponents.Carousel redux={redux} title="Also You May Like" products={redux.products} />
       </GlobalComponents.Layout>
     </DetailsStyle>
   )
@@ -40,16 +40,28 @@ const DetailsStyle = styled.div`
   .details{
     main{
       padding:30px 50px;
+      ${styles.mixins.breakpoint_down('small',`
+        padding:30px 10px;
+      `)}
     }
   }
   .details__hero{
     ${styles.mixins.flex('row','space-between','flex-start',null)}
+    ${styles.mixins.breakpoint_down('small',`
+      ${styles.mixins.flex('row','space-between','flex-start','wrap')}
+    `)}
   }
   .details__view-wrapper{
     width:60%;
+    ${styles.mixins.breakpoint_down('small',`
+      width:100%;
+    `)}
   }
   .details__details-wrapper{
     width:40%;
+    ${styles.mixins.breakpoint_down('small',`
+      width:100%;
+    `)}
   }
 `
 
