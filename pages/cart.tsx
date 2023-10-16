@@ -21,7 +21,7 @@ const Cart:React.FC<any> = ({redux}) => {
                 </div>
                 <CartComponents.Summary summary={redux.summary} />
               </div>
-              <DetailsComponents.Carousel products={redux.products} title='Also You May Buy' />
+              <DetailsComponents.Carousel redux={redux} products={redux.products} title='Also You May Buy' />
             </React.Fragment>
             : <div className='cart__empty'>
                 <h1>Cart Is Empty</h1>
