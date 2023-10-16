@@ -50,8 +50,11 @@ export const handleRemove = (id:number,cart:any,products:any) => (dispatch:Dispa
         cart:tmpCart
     })
 }
-export const handleSummary = (cart:any) => (dispatch:Dispatch) =>{
+export const handleSummary = (cart:any,id?:number) => (dispatch:Dispatch) =>{
     let summary = 0
+    if(id){
+        cart = cart.filter((i:any) => i.id !== id)
+    }
     cart.forEach((i:any) => {
         summary += i.price * i.quantity
     });

@@ -35,7 +35,7 @@ const Item:React.FC<ItemProps> = ({redux,product}) => {
       <div className='cart__item'>
         <div className='cart__item-cross' onClick={()=>{
             redux.shopActions.handleRemove(product?.id,redux.cart,redux.products)
-            redux.shopActions.handleSummary(redux.cart)
+            redux.shopActions.handleSummary(redux.cart,product?.id)
           }}>
           <span></span>
           <span></span>

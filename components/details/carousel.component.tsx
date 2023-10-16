@@ -1,5 +1,5 @@
 import { styles } from '@/styles/styles'
-import React from 'react'
+import React, { MutableRefObject, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 interface CarouselProps{
@@ -8,16 +8,43 @@ interface CarouselProps{
 }
 
 const Carousel:React.FC<CarouselProps> = ({title,products}) => {
+  const [move,setMove] = useState<number>()
+  const [count,setCount] = useState<number>(1);
+
+  const viewRef = useRef() as MutableRefObject<HTMLDivElement>
+  const itemRef = useRef() as MutableRefObject<HTMLDivElement>
+
+  const handlePrev = () =>{
+    setCount(count - 1)
+    if(count < 2){
+      setCount(26)
+    }
+  }
+  const handleNext = () =>{
+    setCount(count + 1)
+    if(count > 25){
+      setCount(1)
+    }
+  }
+  const handleMove = () =>{
+    viewRef.current.style.transform = `translateX(-${(itemRef.current?.clientWidth + 40) * count}px)`
+  }
+
+
+  useEffect(()=>{
+    handleMove()
+  },[count])
+
   return (
     <CarouselStyle>
       <h3>{title}</h3>
       <div className='details__carousel'>
-        <img src="/assets/icons/chevron-left.png" alt="left-chevron" />
+        <img src="/assets/icons/chevron-left.png" alt="left-chevron" onClick={()=>handlePrev()}/>
         <div className="details__carousel-view-wrapper">
-          <div className="details__carousel-view">
+          <div ref={viewRef} className="details__carousel-view">
             {products.map((p:any)=>{
               return(
-                <div key={p.id} className='details__carousel-product'>
+                <div ref={itemRef} key={p.id} className='details__carousel-product'>
                   <div className="details__carousel-product-img">
                     <div className="details__carousel-img-overlay">
                       <button>BUY NOW</button>
@@ -34,7 +61,7 @@ const Carousel:React.FC<CarouselProps> = ({title,products}) => {
             })}
           </div>
         </div>
-        <img src="/assets/icons/chevron-right.png" alt="right-chevron" />
+        <img src="/assets/icons/chevron-right.png" alt="right-chevron" onClick={()=>handleNext()}/>
       </div>
     </CarouselStyle>
   )
@@ -51,6 +78,7 @@ const CarouselStyle = styled.div`
       margin:10px 0px;
     }
     img{
+      cursor:pointer;
       display:block;
       margin:0px 30px;
       cursor:poiter;
@@ -65,7 +93,8 @@ const CarouselStyle = styled.div`
     overflow:hidden;
   }
   .details__carousel-view{
-    ${styles.mixins.flex('row','center','flex-start',null)};
+    transition:all 1s ease-in-out;
+    ${styles.mixins.flex('row','flex-start','flex-start',null)};
   }
   .details__carousel-product{
     cursor:pointer;
